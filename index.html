@@ -1,98 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movie Haven</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <link rel="icon" href="logo.png">
+  <meta charset="UTF-8" />
+  <title>Movie Haven</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="icon" href="logo.png" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 </head>
+
 <body>
-    <input type="checkbox" id="check">
-    <label for="check">
-        <i class="fa fa-bars" id="btn"></i>
-    </label>
-    <div class="sidebar">
-        <h4><a href="index.html">Movie Haven</a></h4>
-            <li><div><div id="movies"><i class="fa-solid fa-film"></i>Movies</div></div></li>
-            <li><div><div id="tvshows"><i class="fa-solid fa-tv"></i>TV Shows</div></div></li>
-            <li><div><div id="tr"><i class="fa-solid fa-medal"></i>Top Rated</div></div></li>
-            <li><div><div id="trending"><i class="fa-solid fa-fire"></i>Trending</div></div></li>
-            <li><div><div><i class="fa-solid fa-icons"></i>
-                Genre
-             </div></div></li>
-            <li><div><div id="wishlist"><i class="fa-solid fa-clipboard-list"></i>WishList</div></div></li>
-        </ul>
+
+<!-- sidebar -->
+<aside class="sidebar" id="sidebar">
+  <h2>Movie Haven</h2>
+  <ul>
+    <li data-nav="trending"><i class="fa-solid fa-fire"></i> Trending</li>
+    <li data-nav="movie"><i class="fa-solid fa-film"></i> Movies</li>
+    <li data-nav="tv"><i class="fa-solid fa-tv"></i> TV Shows</li>
+    <li data-nav="top"><i class="fa-solid fa-medal"></i> Top Rated</li>
+  </ul>
+</aside>
+
+<!-- top bar -->
+<header class="topbar">
+  <button class="menu-btn" id="menuBtn"><i class="fa fa-bars"></i></button>
+
+  <a href="index.html" class="brand">
+    <img src="logo.png" alt="Movie Haven Logo" />
+    <span>Movie Haven</span>
+  </a>
+
+  <nav class="nav-desktop">
+    <span data-nav="trending">Trending</span>
+    <span data-nav="movie">Movies</span>
+    <span data-nav="tv">TV Shows</span>
+    <span data-nav="top">Top Rated</span>
+  </nav>
+
+</header>
+
+
+<!-- hero -->
+<section class="hero" id="hero">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-gradient"></div>
+
+  <div class="hero-content">
+    <h1 id="hero-title"></h1>
+    <p id="hero-overview"></p>
+    <div class="hero-meta">
+      <span id="hero-rating"></span>
+      <span id="hero-year"></span>
     </div>
-    <header>
-        <div id="heading">
-            <a href="index.html">
-                <div><img src="logo.png" alt=""> &nbsp&nbspMovie Haven</div>
-            </a>
-        </div>
+    <div class="hero-actions">
+      <button class="hero-btn play-trailer" id="playTrailer">
+        <i class="fa-solid fa-play"></i> Play Trailer
+      </button>
+      <button class="hero-btn hero-info" id="heroInfo">
+        <i class="fa-solid fa-info-circle"></i> More Info
+      </button>
+    </div>
+    <small class="hero-hint desktop-only">Hover 2s to preview trailer | Press 'H' to return here</small>
+  </div>
 
-        <div class="space">
-            Experience Your Endless Entertainment Here.
-        </div>
+  <div class="hero-video" id="heroVideo"></div>
+</section>
 
-        <div id="searchdiv">
-            <form id="form">
-                <input type="text" placeholder="Search for Movies, TV Shows and many more........" id="search" class="search">
-            </form>
-        </div>
-        <div class="space1"></div>
+<!-- trailer modal -->
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <button class="modal-close" id="modalClose">
+      <i class="fa-solid fa-times"></i>
+    </button>
+    <div id="modalBody"></div>
+  </div>
+</div>
 
-    </header>
 
-    
-    <main id="main">
-        <div class="movie">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIFmL76kAvcC4HSkf1DHmG-B5aBWnD71hECg&s" alt="Image">
+<div class="search-wrap">
+  <input id="search" placeholder="Search movies or TV shows... (Press '/' to focus)" />
+</div>
 
-            <div class="movie-info">
-                <h3>Movie Title</h3>
-                <span class="green">9.8</span>
-            </div>
+<main id="main">
+  <!-- loading skeletons will be inserted here -->
+</main>
 
-            <div class="overview">
-                <h2>Title</h2>
-                <h3>Synopsis</h3>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores nostrum minima numquam itaque libero quia perspiciatis commodi quibusdam illo laudantium sint illum dolor magnam recusandae, alias perferendis mollitia odit officia?
-            </div>
-        </div>
+<!-- shortcuts -->
+<div class="keyboard-help" id="keyboardHelp">
+  <h3>Keyboard Shortcuts</h3>
+  <div class="shortcut-list">
+    <div><kbd>/</kbd> Focus search</div>
+    <div><kbd>H</kbd> Scroll to hero</div>
+    <div><kbd>ESC</kbd> Clear search</div>
+    <div><kbd>?</kbd> Toggle this help</div>
+  </div>
+</div>
 
-        <div class="movie">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIFmL76kAvcC4HSkf1DHmG-B5aBWnD71hECg&s" alt="Image">
-
-            <div class="movie-info">
-                <h3>Movie Title</h3>
-                <span class="green">9.8</span>
-            </div>
-
-            <div class="overview">
-                <h2>Title</h2>
-                <h3>Overview</h3>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores nostrum minima numquam itaque libero quia perspiciatis commodi quibusdam illo laudantium sint illum dolor magnam recusandae, alias perferendis mollitia odit officia?
-            </div>
-        </div>
-
-        <div class="movie">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIFmL76kAvcC4HSkf1DHmG-B5aBWnD71hECg&s" alt="Image">
-
-            <div class="movie-info">
-                <h3>Movie Title</h3>
-                <span class="green">9.8</span>
-            </div>
-
-            <div class="overview">
-                <h2>Title</h2>
-                <h3>Overview</h3>
-                
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores nostrum minima numquam itaque libero quia perspiciatis commodi quibusdam illo laudantium sint illum dolor magnam recusandae, alias perferendis mollitia odit officia?
-            </div>
-        </div>
-    </main>
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
